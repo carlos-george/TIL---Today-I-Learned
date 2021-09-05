@@ -20,25 +20,36 @@ public class Product extends RepresentationModel<Product> implements Serializabl
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
+	private Long id;
 	
 	@Column(name="NAME")
 	private String name;
 	
 	@Column(name="PRICE")
 	private BigDecimal price;
+	
+	public Product() {
+		super();
+	}
+	
+	public Product(Long id, String name, BigDecimal price) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+	}
 
 	/**
 	 * @return the id
 	 */
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
